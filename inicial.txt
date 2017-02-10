@@ -1,1 +1,16 @@
-Tah�s est� lista :D
+﻿Tahís está lista :D
+7/02/2017
+django-admin startproject Fundamentos
+8/02/2017
+Instalar dependencias
+Mysql: se encuentra en la carpeta dependencias
+django: 
+Se instalan todas las dependencias:
+Se usa Python 2.7
+verifca con el comando Python en la consola 
+Se instala django 
+pip install django
+se instala mysql
+se instala el conector que está en la carpeta dependencia. 
+se uso el comando 
+Python manage. py startapp app para crear las diferentes partes y zonas donde estarán las secciones del proyecto
