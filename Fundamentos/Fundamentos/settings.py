@@ -119,6 +119,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': '\\Users\\jose\\Documents\\Git\\Proyecto_Daw2parcial\\miprimerdjango\\basedatos.sqlite',
+        'USER': '',
+        'PASSPORD': '',
+        'HOST': '',
+        'PORT': '',
+
+    }
+}
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -130,3 +144,4 @@ DATABASES = {
     }
 }
 
+'''
