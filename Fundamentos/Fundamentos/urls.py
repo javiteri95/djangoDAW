@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from Fundamentos.views import home
 from curso import views
+from equipo.views import equipo
 
 admin.autodiscover()
 
@@ -25,4 +26,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^cursos/$', views.curso, name='curso'),
+    url(r'^equipo/$', equipo, name='equipo'),
 ]
