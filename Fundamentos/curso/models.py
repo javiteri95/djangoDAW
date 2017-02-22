@@ -11,9 +11,9 @@ from django.utils import timezone
 class Curso(models.Model):
     
     nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=500)
-    pre_requisito = models.TextField(max_length=100)
-    co_requisito = models.TextField(max_length=100)
+    descripcion = models.TextField(max_length=500)
+    pre_requisito = models.CharField(max_length=100)
+    co_requisito = models.CharField(max_length=100)
     nivel =  models.CharField(max_length=10)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
     

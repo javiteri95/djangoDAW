@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^cursos/$', views.curso, name='curso'),
-    url(r'^equipo/$', equipo, name='equipo'),
+    url(r'^equipos/$', equipo, name='equipo'),
 ]
