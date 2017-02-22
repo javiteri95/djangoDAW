@@ -18,17 +18,13 @@ class Migration(migrations.Migration):
             name='Curso',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('nombre', models.CharField(max_length=50)),
                 ('descripcion', models.CharField(max_length=500)),
+                ('pre_requisito', models.CharField(max_length=100)),
+                ('co_requisito', models.CharField(max_length=10)),
+                ('nivel', models.CharField(max_length=10)),
                 ('fecha_publicacion', models.DateTimeField(auto_now_add=True)),
-                ('nivel', models.CharField(max_length=50)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Materias',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('contenido', models.TextField()),
-                ('curso', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='curso.Curso')),
+               
             ],
         ),
     ]

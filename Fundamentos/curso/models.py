@@ -8,24 +8,21 @@ from django.utils import timezone
 
 # Create your models here.
 
-
 class Curso(models.Model):
+    
+    nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=500)
+    pre_requisito = models.TextField(max_length=100)
+    co_requisito = models.TextField(max_length=100)
+    nivel =  models.CharField(max_length=10)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
-    nivel =  models.CharField(max_length=50)
+    
 
     def __str__(self):
-        return self.descripcion
+        return self.nombre
 
     def publicado_hoy(self):
         return self.fecha_publicacion.date() == timezone.now().date()
     publicado_hoy.boolean = True
     publicado_hoy.descripcion_corta = '¿Preguntando hoy?'
 
-
-class Materias(models.Model):
-    curso = models.ForeignKey(Curso)
-    contenido = models.TextField()
-
-    def __str__(self):
-        return self.contenido

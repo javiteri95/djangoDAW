@@ -7,17 +7,15 @@ from django.contrib import admin
 
 from . import models
 '''
-class RespuestaInline(admin.StackedInline):
-	model=models.Materias
+class CursosInline(admin.StackedInline):
+	model=models.Curso
 	extra=3
-'''
-'''
-class PreguntaAdmin(admin.ModelAdmin):
-	inlines = [RespuestaInline]	
-	list_display = ('descripcion', 'fecha_publicacion', 'publicado_hoy')
+
+class CursoAdmin(admin.ModelAdmin):
+	inlines = [CursosInline]	
+	list_display = ('nombre', 'pre_requisito','co_requisito','nivel','fecha_publicacion', 'publicado_hoy')
 	list_filter= ['fecha_publicacion']
 '''
-	
+
 admin.site.register(models.Curso)
-admin.site.register(models.Materias)
 
