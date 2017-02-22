@@ -1,9 +1,167 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Fundamentos de Programacion</title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends "base.html "%}
+{% load staticfiles %}
+{% block title %} home {% endblock %}
+
+
+{% block content %}
+ 
+
+<!-- intro section
+   ================================================== -->
+   <section id="intro">
+
+   	<div class="shadow-overlay"></div>
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+
+	   			<div class='video-link'>
+	   				<a href="#video-popup"><img src="{% static 'images/play-button.png' %}" alt=""></a>
+	   			</div>
+
+	   			<h5>Bienvenido al curso de Fundamentos de Programación</h5>
+	   			<h1>Donde aprenderás a razonar para programar</h1>
+
+	   			<a class="button stroke smoothscroll" href="#testimonials" title="">Conoce más</a>
+
+	   		</div>  
+   			
+   		</div>   		 		
+   	</div> 
+
+   	<!-- Modal Popup
+	   ========================================================= -->
+
+      <div id="video-popup" class="popup-modal mfp-hide">
+
+		   <div class="fluid-video-wrapper">
+            <iframe src="https://www.youtube.com/embed/jTsOQdCrAis" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+         </div>		     
+
+         <a class="close-popup">Cerrar</a>         
+
+	   </div> <!-- /video-popup -->
+
+     <div id="login-popup" class="popup-modal mfp-hide">
+ 
+          
+          <div class="fluid-video-wrapper" id="log">
+                <form id="login" class="group" width="300" height="201">
+                   <p>Usuario:</p><input id="ulogin" type="text" placeholder="Ingrese su correo Espol completo" >
+                   <p>Contraseña:</p><input id="clogin" type="password" placeholder="Ingrese su contraseña" >
+                   <p class="oculto" style="display: none;">Revise sus datos</p>
+                   
+                   <a class="button" onclick="login();">Ingresar</a>
+                </form>
+
+          </div>              
+
+         <!--<a class="close-popup">Cerrar</a>      -->   
+
+      </div> <!-- /video-popup -->        
+
+   </section> <!-- /intro -->
+
+   <!-- Testimonials Section
+   ================================================== -->
+   <section id="testimonials">
+
+      <div class="row">
+         <div class="col-twelve">
+            <h2 class="h01">Lee algunas frases inspiradoras</h2>
+         </div>         
+      </div>      
+
+      <div class="row flex-container">
+    
+         <div id="testimonial-slider" class="flexslider">
+
+            <ul class="slides">
+
+               <li>
+                  <div class="testimonial-author">
+                     <img src="{% static 'images/avatars/avatar-1.jpg' %}" alt="Author image">
+                     <div class="author-info">
+                        Steve Jobs
+                        <span class="position">CEO, Apple.</span>
+                     </div>
+                  </div>
+
+                  <p>
+                  Tu trabajo va a llenar una gran parte de tu vida, y la única manera de quedar realmente satisfecho es hacer lo que creas que es un gran trabajo. Y la única manera de hacer un gran trabajo es amar lo que te gusta hacer.
+                  Si no lo has encontrado todavía, sigue buscando. No sientes cabeza. Como con todos los asuntos del corazón, sabrás cuando lo encuentres.                  
+                  </p>                  
+               </li> <!-- /slide -->
+
+               <li> 
+
+                  <div class="testimonial-author">
+                     <img src="{% static 'images/avatars/avatar-2.jpg' %}" alt="Author image">
+                     <div class="author-info">
+                        Will I am
+                        <span>CEO, Black Eyed Peas.</span>
+                     </div>
+                  </div> 
+
+                  <p>
+                  Aquí estamos en pleno 2013. Completamente dependientes de la tecnología. Hoy en día todo depende de la programación; la información, la banca, comunicar, los negocios...<br> ¡Y casi nadie sabe cómo escribir o leer un código!<br>
+                  Hoy en día los grandes programadores son estrellas de rock<br>
+                  ¡Eso es todo!
+                  </p>
+                                         
+               </li> 
+
+               <li> 
+
+                  <div class="testimonial-author">
+                     <img src="{% static 'images/avatars/avatar-3.jpg' %}" alt="Author image">
+                     <div class="author-info">
+                        Jean Doe
+                        <span>CEO, Black Eyed Peas.</span>
+                     </div>
+                  </div> 
+
+                  <p>
+                  Aquí estamos en pleno 2013. Completamente dependientes de la tecnología. Hoy en día todo depende de la programación; la información, la banca, comunicar, los negocios...<br> ¡Y casi nadie sabe cómo escribir o leer un código!<br>
+                  Hoy en día los grandes programadores son estrellas de rock<br>
+                  ¡Eso es todo!
+                  </p>
+                                         
+               </li> <!-- /slide -->
+
+            </ul> <!-- /slides -->
+
+         </div> <!-- /testimonial-slider -->         
+        
+      </div> <!-- /flex-container -->
+
+   </section> <!-- /testimonials -->
+
+<!-- cta
+   ================================================== -->
+   <section id="cta">
+
+   	<div class="row cta-content">
+
+   		<div class="col-twelve">
+
+   			<h1 class="h01">¡Empieza ya a programar!</h1>
+
+   			<p class="lead">¡Regístrate ya!</p>
+
+   			<ul class="stores">
+   				<li class="windows-store">
+   					<a href="https://www.academico.espol.edu.ec/UI/Registros/horariosplanificados.aspx?opt=6" class="button round large" title="">
+   						<i class="icon ion-social-windows"></i>Registro en el Académico</a>
+   					</li>
+   			</ul>
+
+   		</div>
+
+   	</div> <!-- /cta-content -->
+
+   </section> <!-- /cta -->
+{% endblock %}
