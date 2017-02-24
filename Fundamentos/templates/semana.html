@@ -1,0 +1,51 @@
+{% extends "base.html "%}
+{% load staticfiles %}
+{% block title %} Noticias {% endblock %}
+
+
+{% block content %}
+
+
+<section id="faq">
+
+      <div class="row section-intro">
+         <div class="col-twelve with-bottom-line">
+
+            <h5>ultimas actividades</h5>
+            <h1>Noticias</h1>
+
+            <p class="lead">aqui mostramos todas las noticias recientes</p>
+
+         </div>         
+      </div>
+
+        <div class="container2">
+                <p><a href="{% url "crearNoticia" %}">Crear una Noticias </a></p>
+    <article>
+    		{% for noticia in noticias %}
+   	
+    		<h3>{{ noticia.titulo }}</h3>
+    				<div>
+            		<img src="{{ noticia.url_image }}" >
+            		</div>
+            		
+            		<div class="caption"/>
+            			<h5>{{ noticia.Contenido }}</h5>
+            			<h5>{{noticia.tag}}</h5>
+            			<h5>{{noticia.fecha_publicacion}}</h5>
+            			
+            		</div>
+            		</div>
+    <br/> 
+		 {% endfor %}
+	</article>
+                 
+        </div>
+
+
+
+   </section> <!-- /faq -->
+
+	
+
+{% endblock %}

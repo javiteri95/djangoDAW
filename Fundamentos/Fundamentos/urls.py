@@ -33,5 +33,5 @@ urlpatterns = [
     #url(r'^equipos/$', equipo, name='equipo'),
     url(r'^ayudantias/$', ayudantia, name='ayudantias'),
     url(r'^noticias/$', views.noticias, name='noticias'),
-    url(r'^noticias/crear/$', views.crearNoticia, name='crearNoticia'),
+    #url(r'^noticias/crear/$', views.crearNoticia, name='crearNoticia'),
 ]
