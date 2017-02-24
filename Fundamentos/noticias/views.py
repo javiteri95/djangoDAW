@@ -12,15 +12,27 @@ def noticias(request):
     return render(request, 'noticias.html',{'noticias':noticias})   
     #return render_to_response('noticias.html',{'noticias':noticias})
 
-
+'''
 #@csrf_exempt
 def crearNoticia(request):
     
     if request.method == 'POST':
         form_noticia=NoticiasForm(request.POST)
         if form_noticia.is_valid():
-           form_noticia.save()
-        return HttpResponseRedirect('noticias')
+            
+            ''' 
+            '''
+            noticia = Noticias(titulo=form.cleaned_data['titulo'],
+                        Contenido=form.cleaned_data['Contenido'],
+                        url_image=form.cleaned_data['url_image'],
+                        tag=form.cleaned_data['tag'],
+                        fecha_publicacion=timezone.now())
+             noticia.save()
+             '''
+             '''
+            form_noticia.save()
+            return redirect('noticias')
     else:
     	form_noticia=NoticiasForm()
-    return render(request, 'noticia_crear.html', {'form_noticia':form_noticia})
+    return render(request, 'noticia_crear.html', {'form_noticia': form_noticia })
+'''

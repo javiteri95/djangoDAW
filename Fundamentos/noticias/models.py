@@ -10,7 +10,7 @@ class Noticias(models.Model):
     
     titulo = models.CharField(max_length=100)
     Contenido = models.TextField()
-    url_image = models.CharField(max_length=100)
+    url_image = models.CharField(max_length=300)
     tag =  models.CharField(max_length=100)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
     
