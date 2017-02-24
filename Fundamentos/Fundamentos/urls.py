@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from Fundamentos.views import home
-from curso import views
+from curso.views import curso
 from equipo.views import equipo
+from ayudantias.views import ayudantia
+from noticias import views
+#from ranking.views import ranking
 
 admin.autodiscover()
 
@@ -25,6 +28,10 @@ urlpatterns = [
     url(r'^admin/docs', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
-    url(r'^cursos/$', views.curso, name='curso'),
+    url(r'^cursos/$', curso, name='curso'),
     url(r'^equipos/$', equipo, name='equipo'),
+    #url(r'^equipos/$', equipo, name='equipo'),
+    url(r'^ayudantias/$', ayudantia, name='ayudantias'),
+    url(r'^noticias/$', views.noticias, name='noticias'),
+    url(r'^noticias/crear/$', views.crearNoticia, name='crearNoticia'),
 ]
