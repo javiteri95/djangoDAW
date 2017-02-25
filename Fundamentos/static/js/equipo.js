@@ -1,4 +1,4 @@
-$.get('js/profesores.json', function(data) {
+$.get('profesores', function(data) {
 
   $.each(data, function(i, profesor) {
     var cargo = profesor.cargo;

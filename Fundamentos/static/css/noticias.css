@@ -19,7 +19,7 @@ h5{
           border: 1px solid #21A67E;
           transition: 0.3s;
 }
-
+/*
 img{
   border-radius: 50%;
   padding: 5%;
@@ -41,13 +41,13 @@ img:hover{
 }
 
 
-
 .thumbnail{
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    border-radius: 1%;
  transition:all 0.3s ease;
 
 }
+*/
 
 #faq > .container2{
     padding: 5%;
