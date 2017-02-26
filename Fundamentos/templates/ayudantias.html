@@ -1,1 +1,170 @@
-dd
+{% extends "base.html" %} {% load static %} {% block styles %}
+<link rel="stylesheet" type="text/css" href="css/stiloIni.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+    table,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        text-align: left;
+    }
+</style>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/vendor.css' %}"> {% endblock %} {% block title %}Semana a Semana{% endblock %} {% block content %}
+
+<hr>
+<section id="pricing">
+
+    <div class="row section-intro">
+        <div class="col-twelve with-bottom-line">
+
+            <h5>Ayudantías</h5>
+            <h1>Los mejores que podrás encontrar.</h1>
+
+            <p class="lead">La Espol ofrece un servicio de ayudantías, con los mejores ayudantes. Ellos te guiarán en tu caminar por el .</p>
+
+        </div>
+    </div>
+
+    <div class="row pricing-content">
+
+        <div class="pricing-tables block-1-2 group">
+
+            <div class="bgrid">
+
+                <div class="price-block">
+
+                    <div class="top-part ">
+
+
+                        <h3 class="plan-title">Ayudante</h3>
+                        <p class="plan-price">Jorge Isaac Guerra Solís</p>
+                        <p class="price-month">correo@espol.edu.ec</p>
+                    </div>
+
+                    <div class="bottom-part">
+                        <ul class="features">
+                            <li><img style="border-radius: 50%" src="images/avatars/avatar-1.jpg"></li>
+                            <li>
+                                <div class='video-link'>
+                                    <a href="#horario-popup" class="button large"> Ver Horario </a></li>
+                        </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <!-- /pricing-tables -->
+
+    </div>
+    <!-- /pricing-content -->
+
+</section>
+<!-- /pricing -->
+
+<div id="map-popup"></div>
+
+<div id="horario-popup" class="popup-modal mfp-hide">
+
+    <div class="fluid-video-wrapper" style="padding: 10">
+        <table>
+            <tr>
+                <th colspan="2">Horario</th>
+                <th colspan="2">Lugar</th>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>17:00 - 18:00</td>
+                <td>
+                    <a class="button large">
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+                       24-A
+                      </button>
+                    </a>
+                </td>
+                <td>Laboratorio de ingenieria de Software</td>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>17:00 - 18:00</td>
+                <td>
+                    <a class="button large">
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+                       24-A
+                      </button>
+                    </a>
+                </td>
+                <td>Laboratorio de ingenieria de Software</td>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>17:00 - 18:00</td>
+                <td>
+                    <a class="button large">
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+                       24-A
+                      </button>
+                    </a>
+                </td>
+                </td>
+                <td>Laboratorio de ingenieria de Software</td>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>17:00 - 18:00</td>
+                <td>
+                    <a class="button large">
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+                       24-A
+                      </button>
+                    </a>
+                </td>
+                <td>Laboratorio de ingenieria de Software</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <a class="close-popup">Cerrar</a>
+</div>
+<!-- /video-popup -->
+
+
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Google Maps</h4>
+            </div>
+            <div class="modal-body">
+
+                <div id="map_canvas" style="width:auto; height: 500px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
