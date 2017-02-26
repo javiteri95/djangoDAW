@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def equipo(request):
+
     profesores = Profesores.objects.all()
     coordinador = Coordinador.objects.get(id=1)
     context = {

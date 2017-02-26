@@ -12,4 +12,9 @@ from django.contrib.auth.decorators import login_required
 
 def ayudantia(request):
     ayudantias = Ayudantias.objects.all()
-    return render(request, 'ayudantias.html', {'ayudantias': ayudantias})
+    context = {
+        'ayudantias': ayudantias,
+        'aulas': aulas,
+        'ayudantes': ayudantes
+    }
+    return render(request, 'ayudantias.html', context)

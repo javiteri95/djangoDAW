@@ -16,7 +16,7 @@ class AyudantiasInline(admin.StackedInline):
 class AyudantesAdmin(admin.ModelAdmin):
     inlines = [AyudantiasInline]
     list_display = ('matricula', 'nombre', 'publicado_hoy')
-    list_filter = ['fecha_publicacion']
+    list_filter = ['matricula']
 
 admin.site.register(models.Ayudantes, AyudantesAdmin)
 admin.site.register(models.Aulas)
