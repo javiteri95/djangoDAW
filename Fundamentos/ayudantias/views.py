@@ -1,6 +1,6 @@
 # encoding: utf-8
 from django.http import HttpResponse
-from ayudantias.models import Ayudantias
+from ayudantias.models import Ayudantias, Aulas, Ayudantes
 from django.shortcuts import get_object_or_404, render_to_response, render, redirect
 # Create your views here.
 from django.template import RequestContext
