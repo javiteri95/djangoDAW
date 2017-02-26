@@ -14,8 +14,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
 
 
     <!-- mobile specific metas
@@ -24,9 +22,7 @@
 
     <!-- CSS
    ================================================== -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/vendor.css' %}"> {% block styles %} {% endblock %}
+    {% block styles %} {% endblock %}
 
 
     <!-- script
@@ -58,7 +54,7 @@
 
                     <li><a href="{% url 'home' %}" title="">Inicio</a></li>
                     <li><a href="{% url 'curso' %}" title="">El Curso</a></li>
-                    <li><a href="#" title="">Semana</a></li>
+                    <li><a href="{% url 'semanas' %}" title="">Semana</a></li>
                     <li><a href="{% url 'equipo' %}" title="">Equipo</a></li>
                     <li><a href="{% url 'ayudantias' %}" title="">Ayudantías</a></li>
                     <li class="with-sep nove" onclick="sandbox();"><a href="#" title="">SANDBOX</a></li>

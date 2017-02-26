@@ -21,7 +21,7 @@ class Curso(models.Model):
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id + ' - ' + self.nombre
+        return self.nombre
 
     def publicado_hoy(self):
         return self.fecha_publicacion.date() == timezone.now().date()

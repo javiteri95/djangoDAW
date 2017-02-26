@@ -20,6 +20,7 @@ from curso.views import curso
 from equipo.views import equipo
 from ayudantias.views import ayudantia
 from noticias import views
+from semana.views import semana
 from django.conf import settings
 from django.conf.urls.static import static
 #from ranking.views import ranking
@@ -35,7 +36,7 @@ urlpatterns = [
     #url(r'^equipos/$', equipo, name='equipo'),
     url(r'^ayudantias/$', ayudantia, name='ayudantias'),
     url(r'^noticias/$', views.noticias, name='noticias'),
-    #url(r'^noticias/crear/$', views.crearNoticia, name='crearNoticia'),
+    url(r'^semanas/$', semana, name='semanas'),
 ]
 
 if settings.DEBUG is True:

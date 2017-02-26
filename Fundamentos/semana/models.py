@@ -27,7 +27,7 @@ class TipoRecurso(models.Model):
         ('P', 'pdf'),
     )
     nombre = models.CharField(max_length=20)
-    icono = models.CharField(max_length=300)
+    icono = models.URLField(blank=True)
     tipo = models.CharField(max_length=1, choices=TYPE_CHOICE)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Recurso(models.Model):
     tipo = models.ForeignKey(TipoRecurso, on_delete=models.CASCADE)
     semana = models.ForeignKey(Semana, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
-    file = models.FileField(upload_to='media/', blank=True)
+    file_recurso = models.FileField(upload_to='media/', blank=True)
     url = models.URLField(blank=True)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
 
