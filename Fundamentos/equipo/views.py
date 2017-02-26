@@ -13,7 +13,11 @@ from django.contrib.auth.decorators import login_required
 def equipo(request):
 
     profesores = Profesores.objects.all()
-    coordinador = Coordinador.objects.get(id=1)
+    coordina = Coordinador.objects.all()
+    for coord in coordina:
+        cod_id = coord.id
+    coordinador = Coordinador.objects.get(id=cod_id)
+
     context = {
         'coordinador': coordinador,
         'profesores': profesores
