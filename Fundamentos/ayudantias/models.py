@@ -16,6 +16,7 @@ class Ayudantes(models.Model):
         max_length=9, primary_key=True, validators=[numeric])
     nombre = models.CharField(max_length=100)
     correo = models.EmailField()
+    fecha_publicacion = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.matricula + ' - ' + self.nombre
@@ -30,6 +31,7 @@ class Aulas(models.Model):
     codigo = models.CharField(max_length=50, primary_key=True)
     latitud = models.FloatField(blank=False)
     longitud = models.FloatField(blank=False)
+    fecha_publicacion = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.codigo
@@ -51,8 +53,9 @@ class Ayudantias(models.Model):
     ayudante = models.ForeignKey(Ayudantes, on_delete=models.CASCADE)
     aula = models.ForeignKey(Aulas, on_delete=models.CASCADE)
     dia = models.CharField(max_length=9, choices=DAYS_CHOICES, blank=False)
-    horaInicio = models.TimeField(verbose_name='Empieza')
-    horaFin = models.TimeField(verbose_name='Finaliza')
+    horaInicio = models.TimeField(verbose_name='Inicio')
+    horaFin = models.TimeField(verbose_name='Fin')
+    fecha_publicacion = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.ayudante.nombre + ' - ' + self.aula.codigo + ' - ' + self.dia
