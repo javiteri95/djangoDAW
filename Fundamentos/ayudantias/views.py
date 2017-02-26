@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 
 def ayudantia(request):
     ayudantias = Ayudantias.objects.all()
+    aulas = Aulas.objects.all()
+    ayudantes = Ayudantes.objects.all()
     context = {
         'ayudantias': ayudantias,
         'aulas': aulas,
