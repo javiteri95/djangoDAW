@@ -38,7 +38,7 @@ class Recurso(models.Model):
     tipo = models.ForeignKey(TipoRecurso, on_delete=models.CASCADE)
     semana = models.ForeignKey(Semana, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
-    file = models.FileField(blank=True)
+    file = models.FileField(upload_to='media/', blank=True)
     url = models.URLField(blank=True)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
 

@@ -1,4 +1,10 @@
- {% extends "base.html "%} {% load staticfiles %} {% block title %} home {% endblock %} {% block content %}
+ {% extends "base.html "%} {% load staticfiles %} 
+ 
+{% block styles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+{% endblock %} 
+
+ {% block title %} home {% endblock %} {% block content %}
 
 
 <!-- intro section

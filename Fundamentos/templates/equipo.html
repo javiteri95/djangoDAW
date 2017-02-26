@@ -27,10 +27,12 @@
                     {% if coordinador.foto_url %}
                     <img class="equipo-foto" src="{{ coordinador.foto_url }}" alt=""> {% else %}
                     <img class="equipo-foto" src="{{ MEDIA_URL }}{{ coordinador.file_image }}" alt="{{ coordinador.nombre }}"> {% endif %}
-                    <div class="caption" />
-                    <h5>{{coordinador.cargo}}</h5>
-                    <h5>{{coordinador.mail}}</h5>
-                    <h5>{{coordinador.telefono}}</h5>
+                    <div class="caption">
+                        <h3>{{coordinador.nombre}}</h3>
+                        <h5>{{coordinador.cargo}}</h5>
+                        <h5>{{coordinador.mail}}</h5>
+                        <h5>{{coordinador.telefono}}</h5>
+                    </div>
                 </div>
             </div>
         </section>
@@ -45,21 +47,17 @@
                     <img class="equipo-foto" src="{{ profesor.foto_url }}" alt=""> {% else %}
                     <img class="equipo-foto" src="{{ MEDIA_URL }}{{ profesor.file_image }}" alt="{{ profesor.nombre }}"> {% endif %}
                     <div class="caption" />
+                    <h3>{{profesor.nombre}}</h3>
                     <h5>{{profesor.cargo}}</h5>
                     <h5>{{profesor.mail}}</h5>
                     <h5>{{profesor.telefono}}</h5>
                 </div>
             </div>
     </div>
+
     {% endfor %}
     </section>
-
-
-
-
-
-
-
+    </div>
 
 
 

@@ -1,46 +1,64 @@
-{% extends "base.html "%} {% load staticfiles %} {% block title %} Noticias {% endblock %} {% block content %}
+{% extends "base.html" %} {% load static %} {% block title %}Semana a Semana{% endblock %} {% block content %}
 
-
-<section id="faq">
+<!-- features Section
+   ================================================== -->
+<section id="features">
 
     <div class="row section-intro">
         <div class="col-twelve with-bottom-line">
 
-            <h5>ultimas actividades</h5>
-            <h1>Noticias</h1>
+            <h5>Semana a Semana</h5>
+            <h1>Programa por semana</h1>
 
-            <p class="lead">aqui mostramos todas las noticias recientes</p>
+            <p class="lead">Aqui mostraremos el programa de estudio del curso de fundamentos de programacion</p>
 
         </div>
     </div>
 
-    <div class="container2">
-        <p><a href="{% url " crearNoticia " %}">Crear una Noticias </a></p>
-        <article>
-            {% for noticia in noticias %}
 
-            <h3>{{ noticia.titulo }}</h3>
-            <div>
-                <img src="{{ noticia.url_image }}">
+    <section id="semanas-body" class="container pt-20">
+        <div class="row">
+            <div class="col-lg-offset-1 col-lg-10">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {% for semana in semanas %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+                            <h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+									{{ forloop.counter }}. {{ semana.titulo }}
+								</a>
+							</h4>
+                        </div>
+                        {% if forloop.first %}
+                        <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
+                            {% else %}
+                            <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
+                                {% endif %}
+                                <div class="panel-body">
+                                    <div class="container-fluid">
+                                        {% for recurso in recursos %} {% if recurso.plan == plan %}
+                                        <div class="row">
+                                            <div class="col-md-1 col-xs-2">
+                                                <img src="{{ MEDIA_URL}}{{ recurso.tipo.icono }}" width="30" height="30">
+                                            </div>
+                                            <div class="col-md-5 col-xs-10">
+                                                {% if recurso.url %}
+                                                <a href="{{recurso.url }}" target="_blank">{{recurso.tipo.nombre}}: {{ recurso.nombre }}</a> {% else %}
+                                                <a href="{{ MEDIA_URL}}{{recurso.archivo }}" download>{{recurso.tipo.nombre}}: {{ recurso.nombre }}</a> {% endif %}
+                                            </div>
+                                        </div>
+                                        <hr> {% endif %} {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
 
-            <div class="caption" />
-            <h5>{{ noticia.Contenido }}</h5>
-            <h5>{{noticia.tag}}</h5>
-            <h5>{{noticia.fecha_publicacion}}</h5>
 
-    </div>
-    </div>
-    <br/> {% endfor %}
-    </article>
-
-    </div>
-
-
-
+    </section>
 </section>
-<!-- /faq -->
-
-
-
+<!-- /features -->
 {% endblock %}

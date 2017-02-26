@@ -9,7 +9,12 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-def curso(request):
-    cursos = Curso.objects.all()
-    return render(request, 'curso.html', {'cursos': cursos})
 
+def curso(request):
+    # hago este for porque cuando se borra un registro y se guarda el id se
+    # aumenta
+    todos = Curso.objects.all()
+    for curso in todos:
+        cod_id = curso.id
+    cursos = Curso.objects.get(id=cod_id)
+    return render(request, 'curso.html', {'cursos': cursos})

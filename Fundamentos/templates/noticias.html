@@ -18,25 +18,17 @@
     <div class="container2">
         <article>
             {% for noticia in noticias %}
-
-            <h3>{{ noticia.titulo }}</h3>
-            <h5>{{noticia.fecha_publicacion}}</h5>
-            <div>
-                <img src="{{ noticia.url_image }}">
+            <div class="jumbotron">
+                <h3>{{ noticia.titulo }}</h3>
+                <h5>{{noticia.fecha_publicacion}}</h5>
+                <div>
+                    <img src="{{ noticia.url_image }}">
+                </div>
+                <p>{{ noticia.Contenido }}</p>
             </div>
-
-            <div class="caption" />
-            <p>{{ noticia.Contenido }}</p>
-            <h5>{{noticia.tag}}</h5>
-
-
-    </div>
     </div>
     <br/> {% endfor %}
     </article>
-
-    </div>
-
 
 
 </section>
