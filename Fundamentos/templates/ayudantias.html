@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% load static %} {% block styles %}
-<link rel="stylesheet" type="text/css" href="css/stiloIni.css">
+<link rel="stylesheet" href="{% static 'css/stiloIni.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style>
     table,
@@ -14,9 +14,7 @@
         text-align: left;
     }
 </style>
-<link rel="stylesheet" href="{% static 'css/base.css' %}">
-<link rel="stylesheet" href="{% static 'css/main.css' %}">
-<link rel="stylesheet" href="{% static 'css/vendor.css' %}"> {% endblock %} {% block title %}Semana a Semana{% endblock %} {% block content %}
+{% endblock %} {% block title %}Semana a Semana{% endblock %} {% block content %}
 
 <hr>
 <section id="pricing">
@@ -24,10 +22,10 @@
     <div class="row section-intro">
         <div class="col-twelve with-bottom-line">
 
-            <h5>Ayudantías</h5>
-            <h1>Los mejores que podrás encontrar.</h1>
+            <h5 id="titulo">Ayudantías</h5>
+            <h1 id "subtitulo">Los mejores que podrás encontrar.</h1>
 
-            <p class="lead">La Espol ofrece un servicio de ayudantías, con los mejores ayudantes. Ellos te guiarán en tu caminar por el .</p>
+            <p class="lead" id="palabras">La Espol ofrece un servicio de ayudantías, con los mejores ayudantes. Ellos te guiarán en tu caminar por el .</p>
 
         </div>
     </div>
@@ -35,7 +33,7 @@
     <div class="row pricing-content">
 
         <div class="pricing-tables block-1-2 group">
-
+            {% for ayudante in ayudantes %}
             <div class="bgrid">
 
                 <div class="price-block">
@@ -44,13 +42,13 @@
 
 
                         <h3 class="plan-title">Ayudante</h3>
-                        <p class="plan-price">Jorge Isaac Guerra Solís</p>
-                        <p class="price-month">correo@espol.edu.ec</p>
+                        <p class="plan-price">{{ ayudante.nombre }}</p>
+                        <p class="price-month">{{ ayudante.correo }}</p>
                     </div>
 
                     <div class="bottom-part">
                         <ul class="features">
-                            <li><img style="border-radius: 50%" src="images/avatars/avatar-1.jpg"></li>
+
                             <li>
                                 <div class='video-link'>
                                     <a href="#horario-popup" class="button large"> Ver Horario </a></li>
@@ -62,7 +60,7 @@
 
             </div>
 
-
+            {% endfor %}
 
 
         </div>
@@ -80,46 +78,10 @@
 
     <div class="fluid-video-wrapper" style="padding: 10">
         <table>
+
             <tr>
                 <th colspan="2">Horario</th>
                 <th colspan="2">Lugar</th>
-            </tr>
-            <tr>
-                <td>Lunes</td>
-                <td>17:00 - 18:00</td>
-                <td>
-                    <a class="button large">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
-                       24-A
-                      </button>
-                    </a>
-                </td>
-                <td>Laboratorio de ingenieria de Software</td>
-            </tr>
-            <tr>
-                <td>Lunes</td>
-                <td>17:00 - 18:00</td>
-                <td>
-                    <a class="button large">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
-                       24-A
-                      </button>
-                    </a>
-                </td>
-                <td>Laboratorio de ingenieria de Software</td>
-            </tr>
-            <tr>
-                <td>Lunes</td>
-                <td>17:00 - 18:00</td>
-                <td>
-                    <a class="button large">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
-                       24-A
-                      </button>
-                    </a>
-                </td>
-                </td>
-                <td>Laboratorio de ingenieria de Software</td>
             </tr>
             <tr>
                 <td>Lunes</td>
@@ -163,8 +125,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
+
 
 
 {% endblock %}
