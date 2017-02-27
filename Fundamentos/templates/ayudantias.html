@@ -58,6 +58,39 @@
                     </div>
                 </div>
 
+                <div id="map-popup"></div>
+
+                <div id="horario-popup" class="popup-modal mfp-hide">
+
+                    <div class="fluid-video-wrapper" style="padding: 10">
+
+                        <table>
+
+                            <tr>
+                                <th colspan="2">Horario</th>
+                                <th colspan="2">Lugar</th>
+                            </tr>
+                            {% for ayudantia in ayudantias %} {% if ayudantia.ayudante == ayudante %}
+                            <tr>
+                                <td>{{ ayudantia.dia }}</td>
+                                <td>{{ ayudantia.horaInicio }} - {{ ayudantia.horaFin }}</td>
+                                <td>
+                                    <a class="button large">
+                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+                                       {{ ayudantia.aula.codigo }}
+                                      </button>
+                                    </a>
+                                </td>
+                                <td>Bloque Fiec Vieja</td>
+                            </tr>
+                            {% endif %} {% endfor %}
+                        </table>
+
+                    </div>
+
+                    <a class="close-popup">Cerrar</a>
+                </div>
+
             </div>
 
             {% endfor %}
@@ -72,36 +105,7 @@
 </section>
 <!-- /pricing -->
 
-<div id="map-popup"></div>
 
-<div id="horario-popup" class="popup-modal mfp-hide">
-
-    <div class="fluid-video-wrapper" style="padding: 10">
-        <table>
-
-            <tr>
-                <th colspan="2">Horario</th>
-                <th colspan="2">Lugar</th>
-            </tr>
-            <tr>
-                <td>Lunes</td>
-                <td>17:00 - 18:00</td>
-                <td>
-                    <a class="button large">
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
-                       24-A
-                      </button>
-                    </a>
-                </td>
-                <td>Laboratorio de ingenieria de Software</td>
-            </tr>
-
-        </table>
-
-    </div>
-
-    <a class="close-popup">Cerrar</a>
-</div>
 <!-- /video-popup -->
 
 
