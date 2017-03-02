@@ -64,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            "/Users/jose/Documents/Git/proyectoDAW-ParcialII/Fundamentos/templates",
+            "D:\\Programacion\\djangoProyects\\proyectoDAW-ParcialII\\Fundamentos\\templates",
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -138,8 +138,8 @@ MEDIA_URL = '/media/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': '\\Users\\jose\\Documents\\Git\\Proyecto_Daw2parcial\\miprimerdjango\\basedatos.sqlite',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': '\\Users\\jose\\Documents\\Git\\Proyecto_Daw2parcial\\miprimerdjango\\basedatos.sqlite',
         'USER': '',
         'PASSPORD': '',
         'HOST': '',

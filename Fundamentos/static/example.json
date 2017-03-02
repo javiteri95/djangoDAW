@@ -1,0 +1,22 @@
+[
+ { "paralelo" : 1 ,
+	"estudiantes" : { 
+		"estudiante1" : {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300} , 
+		"estudiante2" : {"nombres" : "sebastian" , "apellidos" : "fuenzalida" ,"nota" : 280} , 
+		"estudiante3":  {"nombres" : "isaac" , "apellidos" : "perez" ,"nota" : 220}
+	}
+ },
+ { "paralelo" : 2 ,
+	"estudiantes" : { 
+		"estudiante1" : {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300} , 
+		"estudiante2" : {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300} , 
+		"estudiante3":  {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300}
+	}
+ },
+ { "paralelo" : 3 ,
+	"estudiantes" : { 
+		"estudiante1" : {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300} , 
+		"estudiante2" : {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300} , 
+		"estudiante3":  {"nombres" : "carlos" , "apellidos" : "leon" ,"nota" : 300}
+	}
+ }]
