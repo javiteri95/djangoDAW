@@ -4,12 +4,12 @@ function obtenerParalelos() {
 	var url = "http://localhost:3000/reportes/api"
 	$.get(url, function( data ) {
 		console.log(data);
-		for (i = 0 ; i < data.length : i++){
+		for (i = 0 ; i < data.length ; i++){
 			$('#ranking').append(
 				"<div class='row'>" + 
 					"<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
 						"<div>" + 
-							"<h3> Paralelo " + data[i].paralelo + "</h3>"
+							"<h3> Paralelo " + data[i].paralelo + "</h3>" +
 						"<div>" +
 						"<table>" + 
 							"<thead>" + 
