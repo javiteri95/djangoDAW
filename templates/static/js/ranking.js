@@ -1,7 +1,7 @@
 
 
 function obtenerParalelos() {
-	var url = "http://localhost:3000/reportes/api"
+	var url = "http://localhost:3000/ejercicios/mejores"
 	$.get(url, function( data ) {
 		console.log(data);
 		for (i = 0 ; i < data.length ; i++){
